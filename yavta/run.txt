@@ -1,0 +1,1 @@
+sudo uftrace -K 20 ./yavta -f UYVY -s 720x480 -n 1 --field interlaced-tb --capture=1 -F /dev/video0

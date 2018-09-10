@@ -110,6 +110,11 @@ static int start_show(struct seq_file *s, void *unused)
 
 	pr_info("%s: called\n", __func__);
 
+	if (wq_type == 0) {
+		pr_err("%s: You need to set wq_type (1~6)\n", __func__);
+		return 0;
+	}
+
 	/* Let's put the queue_work here for test */
 	for (i = 0; i < 10; i++) {
 		pr_err("%s: (%d)th: Add test_work to the tw's workqueue\n",
